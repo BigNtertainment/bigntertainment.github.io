@@ -8,7 +8,15 @@
   height: 100%;
 }
 
+h1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
 .name {
   width: 100%;
   text-align: center;
+  color: #0B090A;
+  text-decoration: inherit;
 }

@@ -2,20 +2,23 @@ import * as THREE from 'three'
 import React from 'react';
 import classes from './App.module.css';
 import Link from "./component/Link";
-import Box from "./component/3js";
-import { Canvas, useFrame } from '@react-three/fiber'
+import Home from "./pages/home";
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import SelfLink from "./component/selfLink";
+import BigNgine from "./pages/bigNgine";
+
 
 function App() {
   return (
     <div className={classes.App}>
-            <h1 className={classes.name}>BigNtertainment</h1>
-            <Link to={"/"}>aaaa</Link>
-        <Canvas>
-            <ambientLight intensity={0.5} />
-            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-            <pointLight position={[-10, -10, -10]} />
-            <Box position={[0, 0, 0]} />
-        </Canvas>
+           <h1><a target={"_self"} href={"/"} className={classes.name}>BigNtertainment</a></h1>
+             <SelfLink to={"/BigNgine"}>BigNgine</SelfLink>
+            <Router>
+                <Routes>
+                    <Route path={"/"} element={<Home/>} />
+                    <Route path={"/bigngine"} element={<BigNgine/>} />
+                </Routes>
+            </Router>
 
     </div>
   );
